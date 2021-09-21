@@ -29,7 +29,7 @@ Azan_Time: [Here](https://adilayyoob.github.io/Azan_Time/index.html).
   - Jomhuria-Regular
 
 ## How to Use
-You can view the page [here](docs/README.md#features). But you want use it in masjids or intended purpose then.
+You can view the page [here](README.md#features). But you want use it in masjids or intended purpose then.
 
 1. Set google chrome to view webpage in full screen.
    - Right click (or tap and hold on tablet) on the Google Chrome icon from my desktop
