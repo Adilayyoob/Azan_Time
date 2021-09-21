@@ -2,7 +2,7 @@
 This website is intended to display various prayer times and Iqamat using a TV in Masjids. The website can run completely offline because all the requirement it needs is served offline. I Initially build this site to work with a Rasberrypie connected to a 32-inch LED/LCD TV. Since the features like buzzer and responsiveness didn't work out well and After all, I am a beginner, I abandoned the project. Any of you can restart the project, And it is well appreciated. Thanks to http://praytimes.org for providing prayer time API, which is an important component for this website.
 
 ## View Page
-Azan_Time: [Here](https://adilayyoob.github.io/my_portfolio/index.html).
+Azan_Time: [Here](https://adilayyoob.github.io/Azan_Time/index.html).
 
 ## Initial UI/UX
 ### 32-inch TV view
