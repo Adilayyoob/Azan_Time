@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- fond -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gayathri:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gayathri:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYscdn.jsdelivr.net/npm/bod53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!--style css-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <title>Azan Time</title>
+  </head>
+  <body>
+    <!-- main divition box -->
+    <div id="main">
+    
+      <!-- clock divition box -->
+      <div id="clock1">
+        <!-- clock analog divition box -->
+        <h1>Azan Time</h1>
+
+        <div id="analog">
+          <div class="clocks">
+             <svg viewBox="-1024 -1024 2048 2048" class="clock">
+               <title>Swiss Railway Clock</title>
+               <style type="text/css">
+                 .bg {stroke: none; fill: white;}
+                 .fc {stroke: none; fill: black;}
+                 .h1 {stroke: none; fill: black;}
+                 .h2 {stroke: none; fill: #333;}
+                 .h3 {stroke: none; fill: #aa0000;}
+               </style>
+               <defs>
+                 <path id="mark1" d="M -20,-1000 l 40,0 0,100 -40,0 z" />
+                 <path id="mark2" d="M -40,-1000 l 80,0 0,240 -80,0 z" />
+                 <path id="mark3" d="M -40,-1000 l 80,0 0,300 -80,0 z" />
+                 <path id="handh" d="M -50,-600  l 50,-50 50,50 0,800  -100,0 z" />
+                 <path id="handm" d="M -40,-900  l 40,-40 40,40 0,1180 -80,0  z" />
+                 <g    id="hands">
+                   <path d="M -10,-910 l  10,-10 10,10 2,300 -24,0 z
+                            M -13,-390 l  26,0         7,690 -40,0 z" />
+                   <path d="M   0,-620 a 120,120 0 0 1 0,240
+                                       a 120,120 0 0 1 0,-240 z
+                            M   0,-560 a  60,60  0 0 0 0,120
+                                       a  60,60  0 0 0 0,-120 z" />
+                 </g>
+                 <g id="face1">
+                   <use xlink:href="#mark1" transform="rotate(06)" />
+                   <use xlink:href="#mark1" transform="rotate(12)" />
+                   <use xlink:href="#mark1" transform="rotate(18)" />
+                   <use xlink:href="#mark1" transform="rotate(24)" />
+                 </g>
+                 <g id="face2">
+                   <use xlink:href="#face1" />
+                   <use xlink:href="#face1" transform="rotate(30)" />
+                   <use xlink:href="#face1" transform="rotate(60)" />
+                   <use xlink:href="#mark3" />
+                   <use xlink:href="#mark2" transform="rotate(30)" />
+                   <use xlink:href="#mark2" transform="rotate(60)" />
+                 </g>
+                 <g id="face">
+                   <use xlink:href="#face2" />
+                   <use xlink:href="#face2" transform="rotate(90)"  />
+                   <use xlink:href="#face2" transform="rotate(180)" />
+                   <use xlink:href="#face2" transform="rotate(270)" />
+                 </g>
+               </defs>
+               <circle class="bg" r="1024" />
+               <use xlink:href="#face"  class="fc" />
+           
+                          <use xlink:href="#handm" class="h2 minutes" transform="rotate(54)" />
+                          <use xlink:href="#handh" class="h1 hours" transform="rotate(304.5)" />
+                          <use xlink:href="#hands" class="h3 seconds" transform="rotate(12)" />
+                          <!-- hands at 10:09:02 -->
+             </svg>
+           </div>
+
+
+        </div>
+        <!-- clock digital divition box -->
+        <p class="words_time">Time</p>
+        <div id="digital">
+          <div class="digital-clock">
+          <span class="digital-hours">00</span>:
+          <span class="digital-minutes">00</span>:
+          <span class="digital-seconds">00</span>
+          </div>
+        </div>
+         <div>
+          <p class="words_time">Date</p>
+          <p id="full_date"></p>
+        </div>
+        <button type="button" class="btn btn-light" onclick="changeTime()" id="changeTime">Change Time</button>
+        <div id="copydiv">
+          <p id="copy">&copy adil ayyoob PH:+91 8129265497</p>
+          </div>
+      </div>
+      <!-- describe divition box -->
+      <div id="describe">
+        <!-- primary describe-->
+        
+        <!-- secondary describe-->
+        <div id="secondary">
+          <table>
+            <thead>
+            <tr class="heading">
+              <th class="malayalam">നമസ്കാരം</th>
+              <th></th>
+              <th class="malayalam">ബാങ്ക്</th>
+              <th class="malayalam">ഇഖാമത്ത് (+)</th>
+            </tr>
+
+            <tr class="heading">
+              <th class="arabic">صلاة</th>
+              <th></th>
+              <th class="arabic">اذان</th>
+              <th class="arabic">اقامة</th>
+            </tr>
+            </thead>
+            <tr class="fajr-d">
+              <td class="malayalam">സുബ്ഹ്</td>
+              <td class="arabic">فجر</td>
+              <td id="fajr" class="number">05:08</td>
+              <td id="fajr-wait" class="number">25</td>
+            </tr>
+
+            <tr class="zuhr-d">
+              <td class="malayalam">ളുഹറ്</td>
+              <td class="arabic">ظهر</td>
+              <td id="zuhr" class="number">12:30</td>
+              <td id="zuhr-wait" class="number">30</td>
+            </tr>
+
+            <tr class="asr-d">
+              <td class="malayalam">അസറ്</td>
+              <td class="arabic">عصر</td>
+              <td id="asr" class="number">03:40</td>
+              <td id="asr-wait" class="number">15</td>
+            </tr>
+
+            <tr class="maghrib-d">
+              <td class="malayalam">മഗ്‌രിബ്</td>
+              <td class="arabic">مغرب</td>
+              <td id="maghrib" class="number">06:40</td>
+              <td id="maghrib-wait" class="number">5</td>
+            </tr>
+
+            <tr class="isha-d">
+              <td class="malayalam">ഇശാ</td>
+              <td class="arabic">عشاء</td>
+              <td id="isha" class="number">07:49</td>
+              <td id="isha-wait" class="number">15</td>
+            </tr>
+
+            <tr>
+              <td class="malayalam">ഉദയം</td>
+              <td class="arabic">شروق</td>
+              <td id="sun_rise" class="number">4:04</td>
+              <td class="free_col" id="ikamath">ഇഖാമത്ത്</td>
+            </tr>
+
+            <tr>
+              <td class="malayalam">ജൂമുഅ</td>
+              <td class="arabic">الجمعة</td>
+              <td id="juma" class="number">12:30</td>
+              <td id="timmer" style="color: red;" rowspan="2" class="free_col">00:00</td>
+            </tr>
+
+            <tr>
+              <td class="malayalam">തറാവീഹ്</td>
+              <td class="arabic">التراويح</td>
+              <td id="tharavih" class="number">8:30</td>
+            </tr>
+          </table>
+          
+        </div>
+         <div id="left">****</div>
+
+          <audio  id="buzzer" src="buzzer/buzzer.mp3"></audio>
+    </div>
+
+
+</div>
+
+
+    
+    
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+   
+    <script type="text/javascript" src="js/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/PrayTimes.js"></script> 
+    <script type="text/javascript" src="js/time_highlite.js"></script>
+    <script type="text/javascript" src="js/stopWatch.js"></script>
+  </body>
+</html>
